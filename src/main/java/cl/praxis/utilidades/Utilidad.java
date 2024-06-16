@@ -11,6 +11,24 @@ import java.util.Scanner;
 
 public class Utilidad {
     private static Scanner sc = new Scanner(System.in);
+
+    // Método para limpiar la pantalla alternativo
+    public static void limpiarPantalla() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
+    }
+
+    // Método para realizar una pausa en la ejecución
+    public static void esperar(int segundos) {
+        try {
+            Thread.sleep(segundos * 1000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            e.printStackTrace();
+        }
+    }
+
     public static Cliente buscarCliente(List<Cliente> listaClientes) {
         System.out.print("Ingrese el RUN del Cliente a editar: ");
         String runCliente = sc.nextLine();
